@@ -8,14 +8,14 @@ namespace RunCliTaskProviderNS;
 
 public static class RunCliTaskProvider
 {
-    public static Task<int> RunCLITask(
+    public static Task<int> RunCliTask(
         IConsole console,
         string taskName,
         Func<CancellationToken, Task> runCliTaskFunc,
         CancellationToken cancellationToken
     )
     {
-        return RunCLITask(
+        return RunCliTask(
             console: console,
             taskName: taskName,
             runCliTaskFunc: async cancellationToken2 =>
@@ -27,7 +27,7 @@ public static class RunCliTaskProvider
         );
     }
 
-    public static async Task<int> RunCLITask(
+    public static async Task<int> RunCliTask(
         IConsole console,
         string taskName,
         Func<CancellationToken, Task<int>> runCliTaskFunc,
